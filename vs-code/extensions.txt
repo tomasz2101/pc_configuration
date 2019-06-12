@@ -1,0 +1,10 @@
+bungcip.better-toml
+eamodio.gitlens
+ms-python.python
+ms-vscode.cpptools
+ms-vscode.Go
+PeterJausovec.vscode-docker
+redhat.vscode-yaml
+rust-lang.rust
+vsciot-vscode.vscode-arduino
+xyz.local-history

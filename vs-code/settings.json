@@ -1,0 +1,16 @@
+{
+    "workbench.startupEditor": "newUntitledFile",
+    "explorer.confirmDelete": false,
+    "files.autoSaveDelay": 1,
+    "files.autoSave": "afterDelay",
+    "explorer.confirmDragAndDrop": false,
+    "files.associations": {
+      "**/envs/**": "yaml",
+      "*.yaml.*": "yaml",
+      "*.yml.*": "yaml",
+      "**/_helpers.tpl": "yaml",
+      "config": "yaml"
+    },
+    "gitlens.hovers.annotations.enabled": false,
+    "window.zoomLevel": 0
+}
