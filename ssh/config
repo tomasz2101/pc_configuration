@@ -1,0 +1,5 @@
+Host *.zenuity.com
+  ForwardAgent yes
+Host 192.168.0.*
+  ForwardAgent yes
+  User tom

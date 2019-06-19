@@ -11,6 +11,13 @@
       "**/_helpers.tpl": "yaml",
       "config": "yaml"
     },
+    "editor.tabSize": 4,
+    "editor.detectIndentation": false,
+    "[yaml]": {
+        "editor.insertSpaces": true,
+         "editor.tabSize": 2,
+         "editor.detectIndentation": false,
+    },
     "gitlens.hovers.annotations.enabled": false,
     "window.zoomLevel": 0
 }
