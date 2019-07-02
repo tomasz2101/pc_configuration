@@ -1,34 +1,66 @@
 tap "azure/aks-engine"
 tap "homebrew/bundle"
 tap "homebrew/core"
+# Automatic configure script builder
 brew "autoconf"
+# Tool for generating GNU Standards-compliant Makefiles
 brew "automake"
+# Interpreted, interactive, object-oriented programming language
 brew "python"
+# Microsoft Azure CLI 2.0
 brew "azure-cli"
+# Collection of portable C++ source libraries
 brew "boost"
+# Cross-platform make
 brew "cmake"
+# Open source programming language to build simple/reliable/efficient software
 brew "go"
+# Go dependency management tool
 brew "dep"
+# Submit git branches to gerrit for review
 brew "git-review"
+# GNU implementation of time utility
 brew "gnu-time"
+# Library for USB device access
 brew "libusb"
+# GNU Pretty Good Privacy (PGP) package
 brew "gnupg"
+# GNU grep, egrep and fgrep
 brew "grep"
+# Kubernetes command-line interface
 brew "kubernetes-cli"
+# Tool that can switch between kubectl contexts easily and create aliases
 brew "kubectx"
+# The Kubernetes package manager
 brew "kubernetes-helm"
+# Template-free customization of Kubernetes YAML manifests
 brew "kustomize"
+# LastPass command-line interface tool
 brew "lastpass-cli"
+# Generic library support script
 brew "libtool"
+# Utility for directing compilation
 brew "make"
+# Message broker implementing the MQTT protocol
 brew "mosquitto"
+# Port scanning utility for large networks
 brew "nmap"
+# SDK for building Kubernetes applications
+brew "operator-sdk"
+# CLI for Postgres with auto-completion and syntax highlighting
 brew "pgcli"
+# Manage compile and link flags for libraries
 brew "pkg-config"
+# Object-relational database system
 brew "postgresql"
+# Static analysis and lint tool, for (ba)sh scripts
 brew "shellcheck"
 brew "sshpass"
+# Tail multiple Kubernetes pods & their containers
 brew "stern"
+# User interface to the TELNET protocol (built from macOS Sierra sources)
 brew "telnet"
+# Internet file retriever
 brew "wget"
+# A tool to provision Kubernetes clusters on Azure
 brew "azure/aks-engine/aks-engine"

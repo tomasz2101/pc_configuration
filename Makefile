@@ -5,7 +5,7 @@ ssh:
 	#TODO add deploy keys from lastpass
 
 mac/brew/dump:
-	brew bundle dump -v --file=./mac/Brewfile
+	brew bundle dump --describe --force  --file=./mac/Brewfile
 
 mac/brew/deploy:
 	brew bundle -v --file=./mac/Brewfile
