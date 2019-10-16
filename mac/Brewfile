@@ -1,6 +1,9 @@
+tap "argoproj/tap"
 tap "azure/aks-engine"
 tap "homebrew/bundle"
+tap "homebrew/cask"
 tap "homebrew/core"
+tap "txn2/tap"
 # Automatic configure script builder
 brew "autoconf"
 # Tool for generating GNU Standards-compliant Makefiles
@@ -9,6 +12,8 @@ brew "automake"
 brew "python"
 # Microsoft Azure CLI 2.0
 brew "azure-cli"
+# Programmable completion for Bash 3.2
+brew "bash-completion"
 # Collection of portable C++ source libraries
 brew "boost"
 # Cross-platform make
@@ -17,6 +22,10 @@ brew "cmake"
 brew "go"
 # Go dependency management tool
 brew "dep"
+# Play, record, convert, and stream audio and video
+brew "ffmpeg"
+# GNU awk utility
+brew "gawk"
 # Submit git branches to gerrit for review
 brew "git-review"
 # GNU implementation of time utility
@@ -27,6 +36,8 @@ brew "libusb"
 brew "gnupg"
 # GNU grep, egrep and fgrep
 brew "grep"
+# Lightweight and flexible command-line JSON processor
+brew "jq"
 # Kubernetes command-line interface
 brew "kubernetes-cli"
 # Tool that can switch between kubectl contexts easily and create aliases
@@ -53,6 +64,10 @@ brew "pgcli"
 brew "pkg-config"
 # Object-relational database system
 brew "postgresql"
+# Framework for managing multi-language pre-commit hooks
+brew "pre-commit", link: false
+# Python version management
+brew "pyenv"
 # Static analysis and lint tool, for (ba)sh scripts
 brew "shellcheck"
 brew "sshpass"
@@ -60,7 +75,16 @@ brew "sshpass"
 brew "stern"
 # User interface to the TELNET protocol (built from macOS Sierra sources)
 brew "telnet"
+# Secures, stores, and tightly controls access to secrets
+brew "vault"
 # Internet file retriever
 brew "wget"
+# Download YouTube videos from the command-line
+brew "youtube-dl"
+# GitOps Continuous Delivery for Kubernetes
+brew "argoproj/tap/argocd"
 # A tool to provision Kubernetes clusters on Azure
 brew "azure/aks-engine/aks-engine"
+# Kubernetes bulk port forwarding utility.
+brew "txn2/tap/kubefwd"
+cask "powershell"

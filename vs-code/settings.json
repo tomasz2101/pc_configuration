@@ -3,21 +3,33 @@
     "explorer.confirmDelete": false,
     "files.autoSaveDelay": 1,
     "files.autoSave": "afterDelay",
+    "files.exclude": {
+        ".history": true,
+        ".venv": true,
+        ".vscode": true
+    },
     "explorer.confirmDragAndDrop": false,
     "files.associations": {
-      "**/envs/**": "yaml",
-      "*.yaml.*": "yaml",
-      "*.yml.*": "yaml",
-      "**/_helpers.tpl": "yaml",
-      "config": "yaml"
+        "**/envs/**": "yaml",
+        "*.yaml.*": "yaml",
+        "*.yml.*": "yaml",
+        "**/_helpers.tpl": "yaml",
+        "config": "yaml",
+        "*.js.*": "javascript",
+        "*.json.*": "json",
     },
     "editor.tabSize": 4,
     "editor.detectIndentation": false,
     "[yaml]": {
         "editor.insertSpaces": true,
-         "editor.tabSize": 2,
-         "editor.detectIndentation": false,
+        "editor.tabSize": 2,
+        "editor.detectIndentation": false,
     },
     "gitlens.hovers.annotations.enabled": false,
-    "window.zoomLevel": 0
+    "window.zoomLevel": 1,
+    "extensions.ignoreRecommendations": true,
+    "python.formatting.autopep8Args": [
+        "--max-line-length",
+        "180"
+    ]
 }
