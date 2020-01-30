@@ -7,7 +7,6 @@
         ".history": true,
         ".vscode": true,
     },
-    "editor.rulers": [79,100],
     "explorer.confirmDragAndDrop": false,
     "files.associations": {
         "**/envs/**": "yaml",
@@ -20,7 +19,9 @@
         "*.xml.*": "xml",
         "*.properties.*": "properties"
     },
+    "editor.rulers": [79,100],
     "editor.tabSize": 4,
+    "editor.autoClosingBrackets": "never",
     "editor.detectIndentation": false,
     "[yaml]": {
         "editor.insertSpaces": true,
@@ -36,5 +37,10 @@
     ],
     "[dockerfile]": {
         "editor.defaultFormatter": "ms-azuretools.vscode-docker"
-    }
+    },
+    "editor.autoClosingOvertype": "never",
+    "editor.autoClosingQuotes": "never",
+    "arduino.ignoreBoards": [
+        "WeMos D1"
+    ]
 }

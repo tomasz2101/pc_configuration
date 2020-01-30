@@ -14,6 +14,8 @@ brew "python"
 brew "azure-cli"
 # Programmable completion for Bash 3.2
 brew "bash-completion"
+# Cross platform file encryption utility using blowfish
+brew "bcrypt"
 # Collection of portable C++ source libraries
 brew "boost"
 # Cross-platform make
@@ -24,8 +26,12 @@ brew "go"
 brew "dep"
 # Play, record, convert, and stream audio and video
 brew "ffmpeg"
+# Monitor a directory for changes and run a shell command
+brew "fswatch"
 # GNU awk utility
 brew "gawk"
+# Git extension for versioning large files
+brew "git-lfs"
 # Submit git branches to gerrit for review
 brew "git-review"
 # GNU implementation of time utility
@@ -36,14 +42,14 @@ brew "libusb"
 brew "gnupg"
 # GNU grep, egrep and fgrep
 brew "grep"
+# The Kubernetes package manager
+brew "helm"
 # Lightweight and flexible command-line JSON processor
 brew "jq"
 # Kubernetes command-line interface
 brew "kubernetes-cli"
 # Tool that can switch between kubectl contexts easily and create aliases
 brew "kubectx"
-# The Kubernetes package manager
-brew "kubernetes-helm"
 # Template-free customization of Kubernetes YAML manifests
 brew "kustomize"
 # LastPass command-line interface tool
@@ -66,6 +72,8 @@ brew "pkg-config"
 brew "postgresql"
 # Framework for managing multi-language pre-commit hooks
 brew "pre-commit", link: false
+# Simple Python style checker in one Python file
+brew "pycodestyle"
 # Python version management
 brew "pyenv"
 # Static analysis and lint tool, for (ba)sh scripts
@@ -77,6 +85,8 @@ brew "stern"
 brew "telnet"
 # Secures, stores, and tightly controls access to secrets
 brew "vault"
+# Executes a program periodically, showing output fullscreen
+brew "watch"
 # Internet file retriever
 brew "wget"
 # Download YouTube videos from the command-line
@@ -88,3 +98,4 @@ brew "azure/aks-engine/aks-engine"
 # Kubernetes bulk port forwarding utility.
 brew "txn2/tap/kubefwd"
 cask "powershell"
+cask "qnapi"
