@@ -1,0 +1,15 @@
+---
+- name: Local vars
+  tags:  always
+  set_fact:
+    _NORD_VPN:
+      ver: 1.0.0
+
+# - name: Download Nord VPN
+#   get_url:
+#     url: "https://repo.nordvpn.com/deb/nordvpn/debian/pool/main/nordvpn-release_{{ _NORD_VPN.version }}_all.deb"
+#     dest: /tmp/nordvpn.deb
+
+- name: Install a .deb package from the internet.
+  apt:
+    deb: "https://repo.nordvpn.com/deb/nordvpn/debian/pool/main/nordvpn-release_{{ _NORD_VPN.ver }}_all.deb"

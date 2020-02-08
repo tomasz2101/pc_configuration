@@ -1,0 +1,37 @@
+---
+- name: Local vars
+  tags:  always
+  set_fact:
+    _VS_CODE:
+      ver: 1.42.0
+
+- name: Install a .deb package from the internet.
+  apt:
+    deb: "https://update.code.visualstudio.com/{{ _VS_CODE.ver }}/linux-deb-x64/stable"
+
+- name: Copy VS Code configuration
+  copy:
+    src: "{{ item }}"
+    dest: /home/tom/.config/Code/User
+  loop:
+    - settings.json
+    - keybindings.json
+
+
+- name: Install all extensions
+  shell: code --install-extension "{{ item }}"
+  loop:
+    - bungcip.better-toml
+    - eamodio.gitlens
+    - foxundermoon.shell-format
+    - matangover.mypy
+    - ms-azuretools.vscode-docker
+    - ms-python.anaconda-extension-pack
+    - ms-python.python
+    - ms-vscode.cpptools
+    - ms-vscode.Go
+    - pycom.pymakr
+    - redhat.vscode-yaml
+    - rust-lang.rust
+    # - vsciot-vscode.vscode-arduino
+    # - xyz.local-history

@@ -1,0 +1,18 @@
+---
+
+- name: ZSH instalation
+  apt:
+    name:
+      - zsh
+    # state: latest
+    update_cache: yes
+    cache_valid_time: 3600
+
+
+- name: ZSH cpnfiguration
+  shell: chsh -s /usr/bin/zsh tom
+  # it will need to logout and login
+
+- name: Oh-my-zsh framework installed
+  shell: sh install.sh
+  

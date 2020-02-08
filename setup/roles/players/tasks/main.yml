@@ -1,0 +1,21 @@
+---
+- name: Install VLC player
+  apt:
+    autoremove: yes
+    name:
+      - vlc
+    state: latest
+    update_cache: yes
+    cache_valid_time: 3600
+
+- name: Ansible create file with content example
+  copy:
+    dest: /home/tom/.config/mimeapps.list
+    content: |
+      [Default Applications]
+      text/html=brave-browser.desktop
+      x-scheme-handler/http=brave-browser.desktop
+      x-scheme-handler/https=brave-browser.desktop
+      x-scheme-handler/about=brave-browser.desktop
+      x-scheme-handler/unknown=brave-browser.desktop
+      video/x-matroska=vlc.desktop
