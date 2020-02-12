@@ -1,0 +1,11 @@
+- name: Add brave to app source
+  copy:
+    dest: /etc/apt/sources.list.d/brave-browser-release.list
+    content: |
+      deb [arch=amd64] https://brave-browser-apt-release.s3.brave.com/ stable main
+
+- name: Brave installed
+  apt:
+    update_cache: yes
+    name:
+    - brave-browser

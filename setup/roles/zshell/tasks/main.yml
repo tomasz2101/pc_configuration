@@ -4,13 +4,13 @@
   apt:
     name:
       - zsh
-    # state: latest
+    state: latest
     update_cache: yes
     cache_valid_time: 3600
 
 
 - name: ZSH cpnfiguration
-  shell: chsh -s /usr/bin/zsh tom
+  shell: "chsh -s /usr/bin/zsh {{ HOME.USER }}"
   # it will need to logout and login
 
 - name: Oh-my-zsh framework installed

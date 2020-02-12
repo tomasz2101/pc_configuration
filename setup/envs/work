@@ -6,5 +6,5 @@ all:
           ansible_connection: local
   vars:
     HOME:
-      USER: tom
-      DIR: /home/tom
+      USER: twitkowski
+      DIR: /home/twitkowski

@@ -12,7 +12,7 @@
 - name: Copy VS Code configuration
   copy:
     src: "{{ item }}"
-    dest: "{{ _VS_CODE.user_data_dir }}"
+    dest: "{{ HOME.DIR }}/.config/Code/User"
   loop:
     - keybindings.json
     - pymakr.json
@@ -20,8 +20,8 @@
 
 
 - name: Install all extensions
-  become_user: tom
-  shell: "code --install-extension {{ item }}"
+  become_user: "{{ HOME.USER }}"
+  shell: code --install-extension "{{ item }}"
   loop:
     - bungcip.better-toml
     - eamodio.gitlens
