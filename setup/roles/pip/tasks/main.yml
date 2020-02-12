@@ -1,0 +1,4 @@
+- name: Be sure base packages are installed
+  apt:
+    autoremove: yes
+    name: python3-pip

@@ -1,0 +1,11 @@
+---
+- name: Local vars
+  set_fact:
+    _NODE_JS:
+      ver: 1.42.0
+      tmp_file: /tmp/nodejs.bash
+
+- name: Install Docker's dependencies
+  apt:
+    name:
+      - nodejs

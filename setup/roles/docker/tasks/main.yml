@@ -2,9 +2,10 @@
 - name: Install Docker's dependencies
   apt:
     name:
-      - apt-transport-https=1.6.12
-      - ca-certificates=20180409
-      - gnupg2=2.2.4-1ubuntu1.2
+      - apt-transport-https
+      - ca-certificates
+      - gnupg2
+    state: latest
 
 - name: Add Docker's public PGP key to the APT keyring
   apt_key:
@@ -21,6 +22,7 @@
 
 - name: Install Docker
   apt:
+    state: latest
     name:
       - docker-ce
       - docker-ce-cli
@@ -28,9 +30,24 @@
 
 - name: remove docker-py
   pip:
+    executable: pip3
     name: docker-py
     state: absent
 
 - name: Install docker compose python module
   pip:
-    name: docker-compose==1.12.0
+    executable: pip3
+    name: docker-compose
+    state: latest
+
+- name: Group "docker" exists
+  group:
+    name: docker
+    state: present
+
+- name: User in docker group
+  user:
+    name: tom
+    append: yes
+    groups: 
+      - docker

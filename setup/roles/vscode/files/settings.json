@@ -5,7 +5,7 @@
     "files.autoSave": "afterDelay",
     "files.exclude": {
         ".history": true,
-        ".vscode": true,
+        ".vscode": true
     },
     "explorer.confirmDragAndDrop": false,
     "files.associations": {
@@ -21,12 +21,11 @@
     },
     "editor.rulers": [79,100],
     "editor.tabSize": 4,
-    "editor.autoClosingBrackets": "never",
     "editor.detectIndentation": false,
     "[yaml]": {
         "editor.insertSpaces": true,
         "editor.tabSize": 2,
-        "editor.detectIndentation": false,
+        "editor.detectIndentation": false
     },
     "gitlens.hovers.annotations.enabled": false,
     "window.zoomLevel": 1,
@@ -38,9 +37,7 @@
     "[dockerfile]": {
         "editor.defaultFormatter": "ms-azuretools.vscode-docker"
     },
+    "editor.autoClosingBrackets": "never",
     "editor.autoClosingOvertype": "never",
-    "editor.autoClosingQuotes": "never",
-    "arduino.ignoreBoards": [
-        "WeMos D1"
-    ]
+    "editor.autoClosingQuotes": "never"
 }
