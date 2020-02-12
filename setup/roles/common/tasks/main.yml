@@ -4,22 +4,22 @@
   apt:
     autoremove: yes
     name:
-      - ntp==1:4.2.8p10+dfsg-5ubuntu7.1
-      - git==1:2.17.1-1ubuntu0.5
-      - software-properties-common==0.96.24.32.12
-      - acl==2.2.52-3build1
-      - vim==2:8.0.1453-1ubuntu1.1
-      - screen==4.6.2-1ubuntu1
-      - openvpn==2.4.4-2ubuntu1.3
-      - speedtest-cli==2.0.0-1
+      - ntp
+      - git
+      - software-properties-common
+      - acl
+      - vim
+      - screen
+      - openvpn
+      - speedtest-cli
       - network-manager
       - network-manager-openvpn-gnome
       - openjdk-8-jre-headless
-      - curl==7.58.0-2ubuntu3.8
-      - mosquitto-clients==1.4.15-2ubuntu0.18.04.3
+      - curl
+      - mosquitto-clients
       - python3-pip
-      - python3==3.8
-    # state: latest
+      - python3
+    state: latest
     update_cache: yes
     cache_valid_time: 3600
 

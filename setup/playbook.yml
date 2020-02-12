@@ -21,3 +21,12 @@
     - role: docker
       tags:
         - docker
+    - role: brave
+      tags:
+        - brave
+    - role: brave
+      tags:
+        - brave
+    - role: slack
+      tags:
+        - slack

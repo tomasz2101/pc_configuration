@@ -12,14 +12,14 @@
 - name: Copy VS Code configuration
   copy:
     src: "{{ item }}"
-    dest: "{{ home_dir }}/.config/Code/User"
+    dest: "{{ HOME.DIR }}/.config/Code/User"
   loop:
     - settings.json
     - keybindings.json
 
 
 - name: Install all extensions
-  become_user: "{{ user }}"
+  become_user: "{{ HOME.USER }}"
   shell: code --install-extension "{{ item }}"
   loop:
     - bungcip.better-toml

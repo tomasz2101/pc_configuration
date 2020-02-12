@@ -1,6 +1,5 @@
 ---
 - name: Local vars
-  tags:  always
   set_fact:
     _NORD_VPN:
       ver: 1.0.0

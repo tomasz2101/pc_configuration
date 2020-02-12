@@ -1,0 +1,9 @@
+---
+- name: Local vars
+  set_fact:
+    _SLACK:
+      ver: 4.3.2
+
+- name: Install a .deb package from the internet.
+  apt:
+    deb: "https://downloads.slack-edge.com/linux_releases/slack-desktop-{{ _SLACK.ver }}-amd64.deb"
