@@ -3,7 +3,6 @@
   set_fact:
     _VS_CODE:
       ver: 1.42.0
-      user_data_dir: /home/tom/.config/Code/User
 
 # - name: Install a .deb package from the internet.
 #   apt:

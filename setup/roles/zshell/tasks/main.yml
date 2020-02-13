@@ -1,5 +1,4 @@
 ---
-
 - name: ZSH instalation
   apt:
     name:
@@ -8,11 +7,31 @@
     update_cache: yes
     cache_valid_time: 3600
 
-
 - name: ZSH cpnfiguration
   shell: "chsh -s /usr/bin/zsh {{ HOME.USER }}"
   # it will need to logout and login
 
+- name: Check if oh-my-shell installed
+  stat: 
+    path: "{{ HOME.DIR }}/.oh-my-zsh"
+  register: stat_result
+
 - name: Oh-my-zsh framework installed
-  shell: sh install.sh
-  
+  become_user: "{{ HOME.USER }}"
+  shell: "sh {{ role_path }}/files/install.sh"
+  when: stat_result.stat.exists == False
+
+- name: Create completion dir
+  file:
+    path: "{{ HOME.DIR }}/.oh-my-zsh/completions"
+    state: directory
+
+- name: Download completion files
+  get_url:
+    url: https://raw.githubusercontent.com/docker/machine/v0.16.0/contrib/completion/zsh/_docker-machine
+    dest: "{{ HOME.DIR }}/.oh-my-zsh/completions/_docker-machine"
+
+- name: Copy zshell configuration
+  copy:
+    src: zshrc.config
+    dest: "{{ HOME.DIR }}/.zshrc"

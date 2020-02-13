@@ -1,0 +1,43 @@
+---
+- name: Local vars
+  set_fact:
+    _KUBECTL:
+      ver: v1.17.3
+
+- name: k3d installed
+  # become_user: "{{ HOME.USER }}"
+  shell: "sh {{ role_path }}/files/install.sh"
+
+
+- name: Download kubectl file
+  get_url:
+    url: "https://storage.googleapis.com/kubernetes-release/release/{{ _KUBECTL.ver }}/bin/linux/amd64/kubectl"
+    dest: /usr/local/bin/kubectl
+    mode: 0755
+
+- name: Checkout kubectx repo
+  git:
+    repo: https://github.com/ahmetb/kubectx
+    dest: /opt/kubectx
+
+- name: Create a symbolic link
+  file:
+    src: "/opt/kubectx/{{ item }}"
+    dest: "/usr/local/bin/{{ item }}"
+    owner: "{{ HOME.USER }}"
+    group: "{{ HOME.USER }}"
+    state: link
+  loop:
+  - kubectx
+  - kubens
+
+- name: Create a symbolic link
+  file:
+    src: /opt/kubectx/completion/{{ item }}.zsh
+    dest: "{{ HOME.DIR }}/.oh-my-zsh/completions/_{{ item }}.zsh"
+    owner: "{{ HOME.USER }}"
+    group: "{{ HOME.USER }}"
+    state: link
+  loop:
+  - kubectx
+  - kubens

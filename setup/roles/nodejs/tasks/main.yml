@@ -1,11 +1,10 @@
 ---
-- name: Local vars
-  set_fact:
-    _NODE_JS:
-      ver: 1.42.0
-      tmp_file: /tmp/nodejs.bash
+# - name: Local vars
+#   set_fact:
+#     _NODE_JS:
+#       ver: 8.10.0~dfsg-2ubuntu0.4
 
-- name: Install Docker's dependencies
+- name: Install nodejs
   apt:
     name:
       - nodejs

@@ -18,7 +18,7 @@
       - curl
       - mosquitto-clients
       - python3-pip
-      - python3
+      - python3.8
     state: latest
     update_cache: yes
     cache_valid_time: 3600

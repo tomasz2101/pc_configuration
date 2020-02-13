@@ -1,4 +1,3 @@
----
 - name: Install VLC player
   apt:
     autoremove: yes
@@ -19,3 +18,7 @@
       x-scheme-handler/about=brave-browser.desktop
       x-scheme-handler/unknown=brave-browser.desktop
       video/x-matroska=vlc.desktop
+
+
+
+

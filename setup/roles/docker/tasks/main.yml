@@ -47,7 +47,7 @@
 
 - name: User in docker group
   user:
-    name: tom
+    name: "{{ HOME.USER }}"
     append: yes
     groups: 
       - docker

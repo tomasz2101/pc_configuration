@@ -6,21 +6,25 @@
     - role: common
       tags:
         - common
+    - role: docker
+      tags:
+        - docker
+    - role: kubernetes
+      tags:
+        - kubernetes
     - role: vscode
       tags:
         - vscode
     - role: zshell
       tags:
         - zshell
-    - role: players
+    - role: vlc
       tags:
-        - players
+        - vlc
     - role: nordvpn
       tags:
         - nordvpn
-    - role: docker
-      tags:
-        - docker
+    
     - role: brave
       tags:
         - brave

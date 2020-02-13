@@ -12,3 +12,5 @@
 - name: Install a .deb package from the internet.
   apt:
     deb: "https://repo.nordvpn.com/deb/nordvpn/debian/pool/main/nordvpn-release_{{ _NORD_VPN.ver }}_all.deb"
+
+
