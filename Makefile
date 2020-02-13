@@ -7,12 +7,8 @@ mac/brew/backup:
 mac/brew/deploy:
 	brew bundle -v --file=./mac/Brewfile
 
-vscode/backup:
-	@mkdir -p vs-code
-	cp -rf ~/Library/Application\ Support/Code/User/settings.json ./vs-code/settings.json
-	cp -rf ~/Library/Application\ Support/Code/User/keybindings.json ./vs-code/keybindings.json
-	code --list-extensions > ./vs-code/extensions.txt
-
-
-terminal/zshel/backup:
-	cp -rf ~/.zshrc ./terminal/zshrc.config
+backup:
+	cp -rf "${HOME}/.config/Code/User/keybindings.json" ./setup/roles/vscode/files/keybindings.json
+	cp -rf "${HOME}/.config/Code/User/pymakr.json" ./setup/roles/vscode/files/pymakr.json
+	cp -rf "${HOME}/.config/Code/User/settings.json" ./setup/roles/vscode/files/settings.json
+	cp -rf "${HOME}/.zshrc" ./setup/roles/terminal/files/zshrc.config

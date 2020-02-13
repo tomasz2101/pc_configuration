@@ -10,6 +10,8 @@
 
 - name: Copy VS Code configuration
   copy:
+    owner: "{{ HOME.USER }}"
+    group: "{{ HOME.USER }}"
     src: "{{ item }}"
     dest: "{{ HOME.DIR }}/.config/Code/User"
   loop:
@@ -34,8 +36,6 @@
     - pycom.pymakr
     - redhat.vscode-yaml
     - rust-lang.rust
-    # - vsciot-vscode.vscode-arduino
-    # - xyz.local-history
 
 - name: esptool installed
   pip:

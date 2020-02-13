@@ -1,10 +1,6 @@
 ---
-# - name: add nginx apt-key
-#   apt_key: 
-#     url: ppa:gnome-terminator
-#     state: present
 
-- name: ZSH instalation
+- name: Terminal apps installed
   apt:
     name:
       - zsh
@@ -13,11 +9,20 @@
     update_cache: yes
     cache_valid_time: 3600
 
-- name: ZSH cpnfiguration
+- name: ZSH as default shell
   shell: "chsh -s /usr/bin/zsh {{ HOME.USER }}"
-  # it will need to logout and login
 
-- name: Check if oh-my-shell installed
+- name: Check default shell
+  become_user: "{{ HOME.USER }}"
+  shell: echo $SHELL
+  register: shell_status
+
+- name: INFO
+  debug:
+    msg: "Please restart computer"
+  when: shell_status.stdout != "/usr/bin/zsh"
+
+- name: Oh-my-zsh installed
   stat: 
     path: "{{ HOME.DIR }}/.oh-my-zsh"
   register: stat_result
@@ -29,6 +34,8 @@
 
 - name: Create completion dir
   file:
+    owner: "{{ HOME.USER }}"
+    group: "{{ HOME.USER }}"
     path: "{{ HOME.DIR }}/.oh-my-zsh/completions"
     state: directory
 
@@ -37,9 +44,17 @@
     url: https://raw.githubusercontent.com/docker/machine/v0.16.0/contrib/completion/zsh/_docker-machine
     dest: "{{ HOME.DIR }}/.oh-my-zsh/completions/_docker-machine"
 
-- name: Copy zshell configuration
+- name: Terminal config in place
   copy:
-    src: zshrc.config
-    dest: "{{ HOME.DIR }}/.zshrc"
+    owner: "{{ HOME.USER }}"
+    group: "{{ HOME.USER }}"
+    src: "{{ item.src }}"
+    dest: "{{ item.dest }}"
+  loop:
+    - src: terminator.config
+      dest: "{{ HOME.DIR }}/.config/terminator/config"
+    - src: zshrc.config
+      dest: "{{ HOME.DIR }}/.zshrc"
 
-
+- name: User able to connect to usb
+  shell: "usermod -a -G dialout {{ HOME.USER }}" 
