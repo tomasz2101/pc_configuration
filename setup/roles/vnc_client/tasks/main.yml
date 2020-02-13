@@ -1,0 +1,13 @@
+
+
+---
+- name: Local vars
+  set_fact:
+    _REAL_VNC:
+      ver: 6.20.113
+
+- name: Install a .deb package from the internet.
+  apt:
+    deb: "https://www.realvnc.com/download/file/viewer.files/VNC-Viewer-{{ _REAL_VNC.ver }}-Linux-x64.deb"
+
+

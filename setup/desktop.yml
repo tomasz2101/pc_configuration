@@ -34,3 +34,6 @@
     - role: slack
       tags:
         - slack
+    - role: vnc_client
+      tags:
+        - vnc_client
