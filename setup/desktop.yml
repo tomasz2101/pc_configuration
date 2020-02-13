@@ -15,12 +15,15 @@
     - role: vscode
       tags:
         - vscode
-    - role: zshell
+    - role: terminal
       tags:
-        - zshell
+        - terminal
     - role: vlc
       tags:
         - vlc
+    - role: spotify
+      tags:
+        - spotify
     - role: nordvpn
       tags:
         - nordvpn

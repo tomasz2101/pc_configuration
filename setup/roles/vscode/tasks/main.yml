@@ -36,3 +36,8 @@
     - rust-lang.rust
     # - vsciot-vscode.vscode-arduino
     # - xyz.local-history
+
+- name: esptool installed
+  pip:
+    name: esptool
+    executable: pip3
