@@ -8,5 +8,4 @@
   apt:
     update_cache: yes
     name:
-    - brave-browser
-
+      - brave-browser

@@ -40,3 +40,6 @@
     - role: vnc_client
       tags:
         - vnc_client
+    - role: signal
+      tags:
+        - signal

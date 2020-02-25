@@ -1,0 +1,17 @@
+---
+
+- name: Install Signal apt repo GPG key.
+  apt_key:
+    data: "{{ lookup('file', 'signal-apt-key.asc') }}"
+    state: present
+    keyring: /etc/apt/trusted.gpg.d/signal-desktop.gpg
+
+- name: Add the Signal repository
+  apt_repository:
+    repo: "deb [arch=amd64] https://updates.signal.org/desktop/apt xenial main"
+    state: present
+
+- name: Install Signal
+  apt:
+    name: signal-desktop
+    state: latest
