@@ -1,0 +1,51 @@
+---
+- name: Local vars
+  set_fact:
+    _P4V:
+      ver: r19.2
+
+- name: Install P4 apt repo GPG key.
+  apt_key:
+    data: "{{ lookup('file', 'perforce-apt-key.asc') }}"
+    state: present
+    keyring: /etc/apt/trusted.gpg.d/perforce-client.gpg
+
+- name: Add the  P4 client repository
+  apt_repository:
+    repo: "deb http://package.perforce.com/apt/ubuntu bionic release"
+    state: present
+
+- name: Install P4 client
+  apt:
+    name: helix-p4d
+    state: latest
+
+- name: Download perforce files
+  get_url:
+    url: "http://www.perforce.com/downloads/perforce/{{ _P4V.ver }}/bin.linux26x86_64/p4v.tgz"
+    dest: /tmp/p4v.tgz
+
+- name: Create p4v dir
+  file:
+    owner: "{{ HOME.USER }}"
+    group: "{{ HOME.USER }}"
+    path: "/opt/p4v"
+    state: directory
+
+- name: Extract p4v.tgz
+  unarchive:
+    src: /tmp/p4v.tgz
+    dest: /opt/p4v
+    extra_opts: [--strip-components=1]
+
+- name: Create a symbolic link
+  file:
+    src: "/opt/p4v/bin/{{ item }}"
+    dest: "/usr/local/bin/{{ item }}"
+    owner: "{{ HOME.USER }}"
+    group: "{{ HOME.USER }}"
+    state: link
+  loop:
+  - p4admin
+  - p4merge
+  - p4v

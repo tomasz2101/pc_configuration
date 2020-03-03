@@ -1,0 +1,16 @@
+---
+
+- name: Local vars
+  set_fact:
+    _VAULT_CTL:
+      ver: 1.3.2
+
+- name: Download kubectl file
+  get_url:
+    url: "https://releases.hashicorp.com/vault/{{ _VAULT_CTL.ver }}/vault_{{ _VAULT_CTL.ver }}_linux_amd64.zip"
+    dest: /tmp/vault.zip
+
+- name: Extract vault.zip
+  unarchive:
+    src: /tmp/vault.zip
+    dest: /usr/local/bin

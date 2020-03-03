@@ -37,9 +37,15 @@
     - role: slack
       tags:
         - slack
-    - role: vnc_client
+    - role: vnc-client
       tags:
-        - vnc_client
+        - vnc-client
     - role: signal
       tags:
         - signal
+    - role: perforce-client
+      tags:
+        - perforce-client
+    - role: vault-client
+      tags:
+        - vault-client
