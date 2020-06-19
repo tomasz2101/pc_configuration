@@ -1,8 +1,4 @@
 ---
-- name: Local vars
-  set_fact:
-    _VS_CODE:
-      ver: 1.42.0
 
 # - name: Install a .deb package from the internet.
 #   apt:
@@ -32,7 +28,7 @@
     - ms-python.anaconda-extension-pack
     - ms-python.python
     - ms-vscode.cpptools
-    - ms-vscode.Go
+    # - ms-vscode.Go
     - pycom.pymakr
     - redhat.vscode-yaml
     - rust-lang.rust
@@ -41,3 +37,8 @@
   pip:
     name: esptool
     executable: pip3
+
+
+
+
+#https://code.visualstudio.com/docs/setup/linux

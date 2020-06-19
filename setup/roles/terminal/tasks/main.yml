@@ -44,6 +44,14 @@
     url: https://raw.githubusercontent.com/docker/machine/v0.16.0/contrib/completion/zsh/_docker-machine
     dest: "{{ HOME.DIR }}/.oh-my-zsh/completions/_docker-machine"
 
+
+- name: Create terminator dir
+  file:
+    owner: "{{ HOME.USER }}"
+    group: "{{ HOME.USER }}"
+    path: "{{ HOME.DIR }}/.config/terminator"
+    state: directory
+
 - name: Terminal config in place
   copy:
     owner: "{{ HOME.USER }}"

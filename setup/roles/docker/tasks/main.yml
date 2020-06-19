@@ -28,8 +28,8 @@
         - docker-ce-cli
         - containerd.io
         - python-setuptools
-        - python-dev
-        - python-pip
+        # - python-dev
+        # - python-pip
   
   - name: remove docker-py
     pip:
@@ -51,11 +51,3 @@
       append: yes
       groups:
         - docker
-  
-  # - name: Logged in dockerhub
-  #   docker_login:
-  #       registry_url: 
-  #       reauthorize: yes
-  #       username: "{{ docker_ansible_user.username }}"
-  #       password: "{{ docker_ansible_user.password }}"
-  #   when: docker_ansible_user is defined
